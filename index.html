@@ -3,79 +3,99 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MONTEVIDEO RUNNING</title>
+    <title>MONTEVIDEO RUNNING | 2026</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;700;900&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-    <!-- Reestructura de barra de navegación 
-            1. Header > contiene la imagen de portada, con un ancho del 100% del viewport, ya que las propiedades width y height daban error semántico > barra de navegación
-            2. Sección principal: Dejamos el h1 y el párrafo de presentación anidados dentro del main
-            3. -->
-    <header>
-       <img src="/img/portada.jpg" alt="Montevideo Running" srcset=" /img/portada.jpg 100vw">
-    <nav>
-        <ul>
-            <li><a href="index.html">Inicio</a></li>
-            <li><a href="pages/inscripciones.html">Inscripciones</a></li>
-            <li><a href="pages/carreras.html">Carreras</a></li>
-            <li><a href="pages/resultados.html">Resultados</a></li>
-            <li><a href="pages/galeria.html">Galeria</a></li>
-            <li><a href="pages/servicios.html">Servicios</a></li>
-            <li><a href="pages/contacto.html">Contacto</a></li>
-        </ul>
-    </nav>
+
+    <header class="main-header">
+        <nav class="navbar">
+            <div class="logo">MVD RUNNING</div>
+            <ul>
+                <li><a href="index.html" class="active">Inicio</a></li>
+                <li><a href="pages/inscripciones.html">Inscripciones</a></li>
+                <li><a href="pages/carreras.html">Carreras</a></li>
+                <li><a href="pages/resultados.html">Resultados</a></li>
+                <li><a href="pages/contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+
+        <div class="hero">
+            <img src="img/portadaoficial.png" alt="Montevideo Running" class="hero-img">
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <span class="event-date">EDICIÓN 2026</span>
+                <h1>MONTEVIDEO<br>RUNNING</h1>
+                <p>Donde cada rambla, parque y calle del país se convierte en nuestra pista. Ponete las nenas, que acá corremos todos.</p>
+                <a href="pages/inscripciones.html" class="btn-main">INSCRIBITE AHORA</a>
+            </div>
+        </div>
     </header>
-    <section>
-        <main>
-            <h1>MONTEVIDEO RUNNING</h1>
-            <p>"¡Bienvenidos a la meta! 🇺🇾"
-        Donde cada rambla, parque y calle del país se convierte en nuestra pista. <br> Ya sea que estés preparando tu primera 5K o sueñes con la <strong>Maratón de Montevideo</strong>, este es tu lugar. Ponete las nenas, que acá corremos todos.</p>
-        </main>
-    </section>
-    <hr>
-    <section>
-        <!--Se agrega la propiedad width ya que el video aparecía achatado-->
-       <video src="assets/video.mp4" width="1000" height="480" autoplay controls muted ></video>
-    </section>
-    <aside>
-        <h3>PRÓXIMAS CARRERAS 2026</h3>
-        <ul>
-            <li><strong>Corre Bosco</strong> (5k / 10k)</li>
-            <li><strong>Montevideo Marathon</strong> (21k / 42k)</li>
-            <li><strong>Bimbo Global Race</strong> (10k)</li>
-            <li><strong>Corre Montevideo</strong> (5k / 10k / 21k)</li>
-            <li><strong>Half Maratón</strong> (21k)</li>
-            <li><strong>Reciclatón Race</strong> (5k)</li>
-            <li><strong>Policía Científica</strong> (5k / 10k)</li>
-            <li><strong>Peluffo Giguens</strong> (5k / 10k)</li>
-            <li><strong>MVD 15K</strong> (15k)</li>
-            <li><strong>MVD 30K</strong> (30k)</li>
-        </ul>
-        <p><em>*Sujeto a cambios según la organización.</em></p>
-    </aside>
-    <section>
-        <hr>
-        <h2 style="text-align: center;">NUESTROS SPONSORS</h2>
-        <p align="center">Empresas e instituciones que apoyan el running en Montevideo:</p>
-    
-        <div align="center">
-            <img src="img/nikelogo.png" alt="Sponsor Nike" width="150">
-            <img src="img/Powerade_logo.png" alt="Sponsor Powerade" width="150">
-            <img src="img/secretarianacional.png" alt="Sponsor Secretaría Nacional" width="180">
-            <img src="img/intendencialogo.png" alt="Intendencia de Montevideo" width="150">
-            <img src="img/caulogo.png" alt="Sponsor Cau" width="180">
+
+    <main class="content-wrapper">
+       <section class="video-section">
+    <div class="video-wrapper">
+        <video id="myVideo" src="assets/video.mp4" autoplay muted loop></video>
+        
+        <div class="video-custom-controls">
+            <button id="playPauseBtn" class="control-btn">
+                <span class="material-symbols-outlined">pause</span>
+            </button>
+            
+            <div class="video-progress-container">
+                <div id="videoProgress" class="video-progress-bar"></div>
+            </div>
+
+            <button id="muteBtn" class="control-btn">
+                <span class="material-symbols-outlined">volume_off</span>
+            </button>
+        </div>
     </div>
-    <hr>
 </section>
-    <footer>
-        
-        <a href="mailto:montevideorunning@imm.gub.uy"><img width="25" alt="Icono de Gmail" src="img/icono_gmail.png">Contactanos por correo electrónico</a>
-        
-        <a href="https://wa.me/59899999999"><img width="25" alt="icono de whatsapp" src="img/icono_whatsapp.png">Escribinos por WhatsApp</a>
 
-        <a href="https://instagram.com/montevideo_running" target="_blank"><img width="25" alt="Instagram logo" src="img/icono_instagram.png">Seguinos en Instagram</a>
+        <div class="info-grid">
+            <aside class="carreras-list">
+                <h3>PRÓXIMAS CARRERAS 2026</h3>
+                <ul>
+                    <li><strong>Corre Bosco</strong> <span>5k / 10k</span></li>
+                    <li><strong>Montevideo Marathon</strong> <span>21k / 42k</span></li>
+                    <li><strong>Bimbo Global Race</strong> <span>10k</span></li>
+                    <li><strong>Corre Montevideo</strong> <span>5k / 10k / 21k</span></li>
+                    <li><strong>MVD 15K / 30K</strong> <span>Especial</span></li>
+                </ul>
+                <p class="disclaimer">*Sujeto a cambios según la organización.</p>
+            </aside>
 
-        <p>Desarrollado por Sparrows 🐦‍⬛.</p>
-        <p>&copy; Copyright 2026. Todos los derechos reservados.</p>
+            <section class="sponsors-section">
+                <h2>NUESTROS SPONSORS</h2>
+                <div class="sponsors-logos">
+                    <img src="img/nikelogo.png" alt="Nike">
+                    <img src="img/Powerade_logo.png" alt="Powerade">
+                    <img src="img/intendencialogo.png" alt="IM">
+                    <img src="img/caulogo.png" alt="CAU">
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="main-footer">
+        <div class="footer-links">
+            <a href="mailto:montevideorunning@imm.gub.uy">
+                <img src="img/icono_gmail.png" alt="Email"> Email
+            </a>
+            <a href="https://wa.me/59899999999">
+                <img src="img/icono_whatsapp.png" alt="WhatsApp"> WhatsApp
+            </a>
+            <a href="https://instagram.com/montevideo_running">
+                <img src="img/icono_instagram.png" alt="Instagram"> Instagram
+            </a>
+        </div>
+        <div class="footer-copy">
+            <p>Desarrollado por <strong>Sparrows 🐦‍⬛</strong>.</p>
+            <p>&copy; 2026 Todos los derechos reservados.</p>
+        </div>
     </footer>
+
 </body>
 </html>

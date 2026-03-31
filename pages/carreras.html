@@ -1,70 +1,93 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carreras</title>
-</head>
-<body>
+    <title>Carreras | MVD RUNNING</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;700;900&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css"> </head>
+<body class="dark-theme">
 
-    <header>
+    <nav class="navbar">
+        <div class="logo">MVD RUNNING</div>
+        <ul>
+            <li><a href="../index.html">Inicio</a></li>
+            <li><a href="inscripciones.html">Inscripciones</a></li>
+            <li><a href="carreras.html" class="active">Carreras</a></li>
+            <li><a href="resultados.html">Resultados</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+    </nav>
 
-        <img src="/img/banner carreras.jpg" alt="banner carreras" srcset=" /img/portada.jpg 100vw">
+    <header class="page-banner">
+        <img src="../img/banner-carreras.jpg" alt="Corredores en la calle" class="banner-img">
+        <div class="banner-overlay">
+            <h1>CARRERAS 2026</h1>
+        </div>
     </header>
-    <h1>
-        CARRERAS
-    </h1>
-    <main>
-    <section>
-        <h2>CALENDARIO DE EVENTOS 2026</h2>
-        <p>Explorá los próximos desafíos en las calles de Montevideo. Tenemos distancias para todos los niveles.</p>      
-        <hr>
 
-        <article>
-            <h3>Montevideo Marathon (42K / 21K / 10K)</h3>
-            <p>La carrera más emblemática de la capital. Recorre toda la rambla desde el Centro hasta Carrasco.</p>
-            <ul>
-                <li><strong>Fecha:</strong> Mayo 2026</li>
-                <li><strong>Largada:</strong> Intendencia de Montevideo</li>
-                <li><strong>Dificultad:</strong> Alta</li>
-            </ul>
-            <a href="inscripciones.html">Inscribirme ahora</a>
-        </article>
+    <main class="main-container">
+        <div class="section-header">
+            <h2>CALENDARIO DE EVENTOS</h2>
+            <p>Explorá los próximos desafíos en las calles de Montevideo. Tenemos distancias para todos los niveles.</p> 
+        </div>
 
-        <hr>
+        <section class="grid-cards">
+            <article class="card">
+                <h3>Montevideo Marathon</h3>
+                <span class="badge">42K / 21K / 10K</span>
+                <p>La carrera más emblemática de la capital. Recorre toda la rambla desde el Centro hasta Carrasco.</p>
+                <ul class="card-details">
+                    <li><strong>Fecha:</strong> Mayo 2026</li>
+                    <li><strong>Largada:</strong> Intendencia de Montevideo</li>
+                    <li><strong>Dificultad:</strong> Alta</li>
+                </ul>
+                <a href="inscripciones.html" class="btn-primary">Inscribirme ahora</a>
+            </article>
 
-        <article>
-            <h3>MVD 15K</h3>
-            <p>Una distancia ideal para quienes buscan pasar de los 10K a la media maratón. Un circuito rápido y plano.</p>
-            <ul>
-                <li><strong>Fecha:</strong> Junio 2026</li>
-                <li><strong>Largada:</strong> Canteras del Parque Rodó</li>
-                <li><strong>Dificultad:</strong> Media</li>
-            </ul>
-            <a href="inscripciones.html">Inscribirme ahora</a>
-        </article>
+            <article class="card">
+                <h3>MVD 15K</h3>
+                <span class="badge">15K</span>
+                <p>Una distancia ideal para quienes buscan pasar de los 10K a la media maratón. Un circuito rápido y plano.</p>
+                <ul class="card-details">
+                    <li><strong>Fecha:</strong> Junio 2026</li>
+                    <li><strong>Largada:</strong> Canteras del Parque Rodó</li>
+                    <li><strong>Dificultad:</strong> Media</li>
+                </ul>
+                <a href="inscripciones.html" class="btn-primary">Inscribirme ahora</a>
+            </article>
 
-        <hr>
+            <article class="card">
+                <h3>Corre Bosco</h3>
+                <span class="badge">10K / 5K</span>
+                <p>Carrera familiar y participativa. Ideal para debutantes o para buscar tu mejor marca en 5 kilómetros.</p>
+                <ul class="card-details">
+                    <li><strong>Fecha:</strong> Abril 2026</li>
+                    <li><strong>Largada:</strong> Colegio Talleres Don Bosco</li>
+                    <li><strong>Dificultad:</strong> Baja</li>
+                </ul>
+                <a href="inscripciones.html" class="btn-primary">Inscribirme ahora</a>
+            </article>
+        </section>
+    </main>
 
-        <article>
-            <h3>Corre Bosco (5K / 10K)</h3>
-            <p>Carrera familiar y participativa. Ideal para debutantes o para buscar tu mejor marca en 5 kilómetros.</p>
-            <ul>
-                <li><strong>Fecha:</strong> Abril 2026</li>
-                <li><strong>Largada:</strong> Colegio Talleres Don Bosco</li>
-                <li><strong>Dificultad:</strong> Baja</li>
-            </ul>
-            <a href="inscripciones.html">Inscribirme ahora</a>
-        </article>
-    </section>
-</main>
-    <footer>
-        <a href="mailto:montevideorunning@imm.gub.uy"><img width="25" alt="Icono de Gmail" src="img/icono_gmail.png">Contactanos por correo electrónico</a>
-        <a href="https://wa.me/59899999999"><img width="25" alt="icono de whatsapp" src="img/icono_whatsapp.png">Escribinos por WhatsApp</a>
-
-        <a href="https://instagram.com/montevideo_running" target="_blank"><img width="25" alt="Instagram logo" src="img/icono_instagram.png">Seguinos en Instagram</a>
-        <p>Desarrollado por Sparrows 🐦‍⬛.</p>
-        <p>&copy; Copyright 2026. Todos los derechos reservados.</p>
+<footer class="main-footer">
+        <div class="footer-links">
+            <a href="mailto:montevideorunning@imm.gub.uy">
+                <img src="img/icono_gmail.png" alt="Email"> Email
+            </a>
+            <a href="https://wa.me/59899999999">
+                <img src="img/icono_whatsapp.png" alt="WhatsApp"> WhatsApp
+            </a>
+            <a href="https://instagram.com/montevideo_running">
+                <img src="img/icono_instagram.png" alt="Instagram"> Instagram
+            </a>
+        </div>
+        <div class="footer-copy">
+            <p>Desarrollado por <strong>Sparrows 🐦‍⬛</strong>.</p>
+            <p>&copy; 2026 Todos los derechos reservados.</p>
+        </div>
     </footer>
+
 </body>
 </html>

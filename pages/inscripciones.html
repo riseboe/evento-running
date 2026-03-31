@@ -1,207 +1,125 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inscripciones</title>
+    <title>Inscripciones | MVD RUNNING</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;700;900&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/inscripciones.css">
 </head>
-<header>
+<body class="form-page">
 
-    <img src="../img/banner inscripciones.jpg" alt="banner inscripciones" width="1850px" height="300px">
-    <nav>
-
+    <nav class="navbar">
+        <div class="logo">MVD RUNNING</div>
         <ul>
             <li><a href="../index.html">Inicio</a></li>
-
-            <li><a href="../pages/carreras.html">Carreras</a></li>
-            <li><a href="../pages/resultados.html">Resultados</a></li>
-            <li><a href="../pages/galeria.html">Galeria</a></li>
-            <li><a href="../pages/servicios.html">Servicios</a></li>
-            <li><a href="../pages/contacto.html">Contacto</a></li>
-
+            <li><a href="inscripciones.html" class="active">Inscripciones</a></li>
+            <li><a href="carreras.html">Carreras</a></li>
+            <li><a href="pages/resultados.html">Resultados</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
         </ul>
-    
-
     </nav>
-</header>
 
-<body>
-
-    <h1>
-        Inscripciones
-    </h1>
-<main>
-
-    <form action="">
-
-        <div>
-            <label for="nombre">Nombre:</label>
-            <input type="text" id="nombre" name="nombre" placeholder="Ingrese Nombre" required> 
-        </div>
-        <br>
-
-        <div>
-            <label for="apellido">Apellido:</label>
-            <input type="text" id="apellido" name="apellido" placeholder="Ingrese Apellido" required> 
-        </div>
-        <br>
-
-        <div>
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" placeholder="ejemplo@ejemplo.com" required> 
-        </div>
-        <br>
-
-        <div>
-            <label for="cedula">Cédula:</label>
-            <input type="text" id="cedula" name="cedula" required min="999999" max="99999999"><q>Sin puntos ni guiones</q >
-            
-        </div>
-        <br>
-
-        <div>
-            <label for="nacimiento">Fecha de nacimiento:</label>
-            <input type="date" name="nacimiento" id="nacimiento" min="1921-03-28" max="2021-03-28" required>
-
-        </div>
-        <br>
-
-        <div>
-            <label for="celular">Celular:</label>
-            <input type="number" id="celular" name="cedular" value="09" required >
-
-        </div>
-        <br>
-
-        <div>
-            <label for="genero">Género:</label>
-            <select name="genero" id="genero" required>
-            <option value=""selected disabled hidden>Seleccione una opción</option>
-            <option value="masculino">Masculino</option>
-            <option value="femenino">Femenino</option>
-            <option value="otro">Otro</option>
-            <option value="therian">Therian</option>
-            </select>
-            
-        </div>
-        <br>
-
+    <header class="page-banner">
         
-
-
-
-        <div>
-            <label for="carrera">Carrera:</label>
-            <select name="carrera" id="carrera" required>
-                <option value=""selected disabled hidden>Seleccione una opción</option>
-                <option value="Bosco">Corre Bosco</option>
-                <option value="Montevideo">Montevideo Marathon</option>
-                <option value="Bimbo">Bimbo Global Race</option>
-                <option value="Corre Montevideo">Corre Montevideo</option>
-                <option value="Half">Half Maraton</option>
-                <option value="Reciclaton">Reciclatón Race</option>
-                <option value="Policia">Policía Científica</option>
-                <option value="Peluffo">Peluffo Giguens</option>
-                <option value="MVD 15K">MVD 15K</option>
-                <option value="MVD 30K">MVD 30K</option>
-
-            </select>
-
+        <img src="../img/portadainscripciones.png" alt="banner inscripciones">
+        <div class="banner-overlay">
+            <h1>INSCRIPCIONES 2026</h1>
         </div>
-        <br>
+    </header>
 
-        <div>
+    <main class="form-container">
+        <section class="form-card">
+            <div class="form-header">
+                <h2>FORMULARIO DE REGISTRO</h2>
+                <p>Completá tus datos para asegurar tu lugar en la carrera.</p>
+            </div>
 
-            <label for="distancia">Distancia:</label>
-            <select name="distancia" id="distancia" required>
-                <option value=""selected disabled hidden>Seleccione una opción</option>
-                <option value="5">5k</option>
-                <option value="10">10k</option>
-                <option value="21">21k</option>
-                <option value="42">42k</option>
-            </select>
-            
+            <form action="#" method="POST" class="running-form">
+                <div class="form-grid">
+                    <div class="input-group">
+                        <label for="nombre">Nombre</label>
+                        <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="apellido">Apellido</label>
+                        <input type="text" id="apellido" name="apellido" placeholder="Tu apellido" required>
+                    </div>
+
+                    <div class="input-group full-width">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" placeholder="ejemplo@correo.com" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="cedula">Cédula</label>
+                        <input type="text" id="cedula" name="cedula" placeholder="12345678" required>
+                        <small>Sin puntos ni guiones</small>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="nacimiento">Fecha de nacimiento</label>
+                        <input type="date" name="nacimiento" id="nacimiento" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="carrera">Carrera</label>
+                        <select name="carrera" id="carrera" required>
+                            <option value="" selected disabled>Seleccioná carrera</option>
+                            <option value="Bosco">Corre Bosco</option>
+                            <option value="Montevideo">Montevideo Marathon</option>
+                            <option value="Bimbo">Bimbo Global Race</option>
+                            <option value="MVD 21K">MVD Half Marathon</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="camiseta">Talle de camiseta</label>
+                        <select name="camiseta" id="camiseta" required>
+                            <option value="" selected disabled>Tu talle</option>
+                            <option value="s">S</option>
+                            <option value="m">M</option>
+                            <option value="l">L</option>
+                            <option value="xl">XL</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group full-width">
+                        <label for="carnet">Carné de Salud (PDF o Imagen)</label>
+                        <input type="file" name="carnet" id="carnet" class="file-input" required>
+                    </div>
+                </div>
+
+                <div class="form-footer">
+                    <div class="checkbox-group">
+                        <input type="checkbox" name="condicion" id="condicion" required>
+                        <label for="condicion">Acepto los términos, condiciones y deslinde de responsabilidad.</label>
+                    </div>
+                    
+                    <button type="submit" class="btn-submit">CONFIRMAR INSCRIPCIÓN</button>
+                </div>
+            </form>
+        </section>
+    </main>
+
+<footer class="main-footer">
+        <div class="footer-links">
+            <a href="mailto:montevideorunning@imm.gub.uy">
+                <img src="img/icono_gmail.png" alt="Email"> Email
+            </a>
+            <a href="https://wa.me/59899999999">
+                <img src="img/icono_whatsapp.png" alt="WhatsApp"> WhatsApp
+            </a>
+            <a href="https://instagram.com/montevideo_running">
+                <img src="img/icono_instagram.png" alt="Instagram"> Instagram
+            </a>
         </div>
-        <br>
-
-        <div>
-            <label for="carnet">Adjunté carné de salud</label>
-            <input type="file" name="carnet" id="carnet" required>
-
-
+        <div class="footer-copy">
+            <p>Desarrollado por <strong>Sparrows 🐦‍⬛</strong>.</p>
+            <p>&copy; 2026 Todos los derechos reservados.</p>
         </div>
-        <br>
+    </footer>
 
-        <div>
-
-            <label for="camiseta">Talle de camiseta:</label>
-            <select name="camiseta" id="camiseta" required>
-                <option value="" selected disabled hidden>Seleccione una opción</option>
-                <option value="s">S</option>
-                <option value="m">M</option>
-                <option value="l">L</option>
-                <option value="xl">XL</option>
-
-            </select>
-
-        </div>
-        <br>
-
-        <div>
-            <label for="localidad">Localidad:</label>
-            <select name="localidad" id="localidad" required>
-                <option value="" selected disabled hidden>Seleccione una opción</option>
-                <option value="artigas">Artigas</option>
-                <option value="canelones">Canelones</option>
-                <option value="cerro-largo">Cerro Largo</option>
-                <option value="colonia">Colonia</option>
-                <option value="durazno">Durazno</option>
-                <option value="flores">Flores</option>
-                <option value="florida">Florida</option>
-                <option value="lavalleja">Lavalleja</option>
-                <option value="maldonado">Maldonado</option>
-                <option value="montevideo">Montevideo</option>
-                <option value="paysandu">Paysandú</option>
-                <option value="rio-negro">Río Negro</option>
-                <option value="rivera">Rivera</option>
-                <option value="rocha">Rocha</option>
-                <option value="salto">Salto</option>
-                <option value="san-jose">San José</option>
-                <option value="soriano">Soriano</option>
-                <option value="tacuarembo">Tacuarembó</option>
-                <option value="treinta-y-tres">Treinta y Tres</option>
-
-            </select>
-
-        </div>
-        <br>
-
-        <div>
-
-            <label for="condicion">Acepte terminos y condiciones</label>
-            <input type="checkbox" name="condicion" id="condicion" required>
-            
-        </div>
-        <br>
-        
-        <br>
-
-        <input type="submit" value="Enviar datos">
-
-
-    </form>
-
-</main>
-
-<footer>
-
-    <h2>**Footer**</h2>
-    <p>Correo</p>
-    <p>Número</p>
-    <p>Instagram logo</p>
-    <p>Desarrollado por Sparrows 🐦‍⬛.</p>
-    <p>&copy; Copyright 2026. Todos los derechos reservados.</p>
-    
-</footer>
-
+</body>
 </html>
