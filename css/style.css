@@ -28,7 +28,7 @@ body {
     justify-self: center;
     justify-content: space-between; /* Separa el contenido del logo de los hipervínculos de navegación*/
     align-items: center;
-    padding: 1.5rem 5%;
+    padding: 1rem 5%;
     background: rgba(0,0,0,0.8);
     backdrop-filter: blur(10px);
     position: fixed;
@@ -112,6 +112,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    margin-top: auto;
 }
 
 .contenido-hero h1 {
@@ -124,9 +125,21 @@ body {
     margin-bottom: 20px;
 }
 
+.contenido-hero h2,
+.contenido-hero h3,
+.contenido-hero h4 {
+    font-family: var(--font-header);
+    line-height: 1.1;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-style: italic;
+    line-height: 1.5;
+    font-size: clamp(0.3rem, 5vw, 1.5rem);
+}
+
 .contenido-hero > h1 > span.decoracion {
     display: inline-block;
-    background: linear-gradient(108deg, rgba(242, 145, 0, 1) 0%, rgba(255, 255, 255, 0) 100%, rgba(255, 255, 255, 1) 100%);
+    background-image: linear-gradient(108deg, rgba(242, 145, 0, 1) 0%, rgba(255, 255, 255, 0) 100%, rgba(255, 255, 255, 1) 100%);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
