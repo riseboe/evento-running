@@ -2,7 +2,8 @@
 :root {
     --negro: #131313;
     --gris-oscuro: #1f2020;
-    --naranja: #f29100; /* El color de la imagen */
+    --naranja: #f29100;
+    --blanco: #f991c; /* El color de la imagen */
     --blanco: #e4e2e1;
     --font-header: 'Space Grotesk', sans-serif;
 }
@@ -21,31 +22,53 @@ body {
     line-height: 1.6;
 }
 
-/* NAVIGATION */
+/* Barra de navegación */
 .navbar {
     display: flex;
-    justify-content: space-between;
+    justify-self: center;
+    justify-content: space-between; /* Separa el contenido del logo de los hipervínculos de navegación*/
     align-items: center;
     padding: 1.5rem 5%;
     background: rgba(0,0,0,0.8);
     backdrop-filter: blur(10px);
     position: fixed;
     width: 100%;
-    z-index: 1000;
+    z-index: 100;
 }
+
+/* Logo de MVD RUNNING */
 
 .logo {
     font-family: var(--font-header);
     font-weight: 900;
     font-style: italic;
-    font-size: 1.875rem;
-    color: var(--blanco);
 }
 
+.logo a {
+    text-decoration: none;
+}
+
+.logo a span.mvd {
+   color: var(--blanco); /* Resalta la palabra "MVD" en blanco */
+   font-size: 2rem;
+}
+.logo a span.running {
+    color: var(--naranja); /* Resalta la palabra "RUNNING" en naranja */
+    font-size: 2rem;
+}
+
+/* Hover de la palabra MVD */
+
+.navbar span.mvd:hover {
+    color: var(--naranja);
+}
+
+/* Links de navegación */
+
 .navbar ul {
-    display: flex;
+    display: flex; 
     list-style: none;
-    gap: 20px;
+    gap: 20px; /* 20px de separación entre los hipervínculos*/
 }
 
 .navbar a {
@@ -54,25 +77,15 @@ body {
     font-family: var(--font-header);
     font-weight: 700;
     text-transform: uppercase;
-    font-size: 1rem;
+    font-size: 1.2rem;
     transition: 0.3s;
 }
 
-.logo a {
-    text-decoration: none;
-    color: inherit;
-    font-size: 1.875rem; /* Asegura el tamaño específico para el logo */
-}
-
-.logo a span {
-    color: var(--naranja); /* Resalta el "RUNNING" en naranja */
-}
-
 .navbar a:hover, .navbar a.active {
-    color: var(--naranja);
+    color: #f29100;
 }
 
-/* HERO SECTION */
+/* Inicio de Hero Section */
 .hero {
     position: relative;
     height: 100vh;
@@ -88,34 +101,49 @@ body {
     top: 0; left: 0;
     width: 100%; height: 100%;
     object-fit: cover;
-    z-index: -1;
-    filter: brightness(0.6);
+    z-index: 0;
+    filter: brightness(0.5) blur(5px);
+    -webkit-mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
+    mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
 }
 
-.hero-overlay {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(to top, var(--negro), transparent);
-    z-index: -1;
+.contenido-hero {
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 }
 
-.hero-content h1 {
+.contenido-hero h1 {
     font-family: var(--font-header);
-    font-size: clamp(3rem, 10vw, 7rem);
-    line-height: 0.9;
-    font-weight: 900;
+    font-size: clamp(3rem, 10vw, 9rem);
+    line-height: 1.1;
+    font-weight: bolder;
+    text-transform: uppercase;
     font-style: italic;
     margin-bottom: 20px;
 }
 
-.event-date {
+.contenido-hero > h1 > span.decoracion {
+    display: inline-block;
+    background: linear-gradient(108deg, rgba(242, 145, 0, 1) 0%, rgba(255, 255, 255, 0) 100%, rgba(255, 255, 255, 1) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+}
+
+.anio-edicion {
     color: var(--naranja);
     font-weight: bold;
+    font-size: 1.2rem;
     letter-spacing: 5px;
+    margin-inline-start: 1em;
 }
 
 .btn-main {
     display: inline-block;
+    text-align: center;
     background: var(--naranja);
     color: black;
     padding: 15px 30px;
@@ -124,9 +152,18 @@ body {
     font-weight: 900;
     margin-top: 25px;
     border-radius: 4px;
+    width: fit-content;
+    transition: 0.3s;
 }
 
-/* BANNER DE PÁGINA */
+.btn-main:hover {
+    transform: translateY(-3px);
+    box-shadow: rgba(192,134,48,1) 0px 10px 20px;
+}
+
+/* Fin de la Hero-section */ 
+
+/* Banner de páginas distintas de index.html */
 .page-banner {
     position: relative;
     height: 350px;
@@ -154,13 +191,17 @@ body {
     text-align: center;
 }
 
-.video-section {
+/* Fin de la sección de banners */
+
+/* Video aéreo de la rambla de MVD */
+
+.video-mvd {
     max-width: 1200px;
     margin: 60px auto;
     padding: 0 20px;
 }
 
-.video-wrapper {
+.contenedor-video {
     position: relative;
     border-radius: 15px;
     overflow: hidden;
@@ -168,13 +209,13 @@ body {
     box-shadow: 0 20px 40px rgba(0,0,0,0.5);
 }
 
-.video-wrapper video {
+.contenedor-video #video-rambla {
     width: 100%;
     display: block;
 }
 
 /* Contenedor de controles (aparece al pasar el mouse) */
-.video-custom-controls {
+.controles-video {
     position: absolute;
     bottom: 0;
     left: 0;
@@ -188,11 +229,11 @@ body {
     transition: opacity 0.3s ease;
 }
 
-.video-wrapper:hover .video-custom-controls {
+.contenedor-video:hover .controles-video {
     opacity: 1; /* Se muestran al hacer hover */
 }
 
-.control-btn {
+#btn-pausa {
     background: none;
     border: none;
     color: var(--blanco);
@@ -202,12 +243,13 @@ body {
     transition: color 0.3s;
 }
 
-.control-btn:hover {
+#btn-pausa:hover {
     color: var(--naranja);
 }
 
-/* Barra de progreso estilo minimalista */
-.video-progress-container {
+/* Simulación de barra de progreso para el video */
+
+.contenedor-barra-progreso {
     flex-grow: 1;
     height: 4px;
     background: rgba(255, 255, 255, 0.2);
@@ -216,12 +258,14 @@ body {
     cursor: pointer;
 }
 
-.video-progress-bar {
+#barra-progreso {
     height: 100%;
     background: var(--naranja); /* Tu color principal */
     width: 0%;
     border-radius: 2px;
 }
+
+
 
 /* GRID INFO */
 .info-grid {
@@ -268,11 +312,11 @@ body {
 }
 
 .sponsors-logos {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 30px;
-    margin-top: 30px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 20px;
+    height: 100%;
 }
 
 .sponsors-logos img {
@@ -280,10 +324,12 @@ body {
     filter: grayscale(1) invert(1);
     opacity: 0.6;
     transition: 0.3s;
+    justify-self: center;
+    align-self: center;
 }
 
 .sponsors-logos img:hover {
-    filter: grayscale(0) invert(0);
+    filter: brightness(0) saturate(100%) invert(64%) sepia(85%) saturate(1560%) hue-rotate(1deg) brightness(101%) contrast(105%);
     opacity: 1;
 }
 
@@ -304,8 +350,16 @@ body {
 
 .footer-links a {
     color: var(--blanco);
+    margin-bottom: 20px;
+    font-family: var(--font-header);
+    font-weight: 700;
+    text-transform: uppercase;
     text-decoration: none;
     font-size: 1.125rem;
+}
+
+.footer-links a:hover {
+    color: var(--naranja);
 }
 
 .footer-links img {
@@ -315,6 +369,8 @@ body {
 }
 
 .footer-copy {
+    display: flex;
+    justify-content: space-evenly;
     font-size: 0.8rem;
     opacity: 0.6;
 }

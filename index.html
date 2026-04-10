@@ -4,15 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MONTEVIDEO RUNNING | 2026</title>
+    <!-- Importación desde Google Fonts las fuentes 'Space Grotesk' e 'Inter' -->
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;700;900&family=Inter:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-
-    <header class="main-header">
+    <header class="seccion-bienvenida">
         <nav class="navbar">
+            <!-- Encerramos el hipervínculo / logo de la página para tratarlo como un elemento en bloque -->
             <div class="logo">
-                <a href="index.html">MVD <span>RUNNING</span></a>
+                <a href="index.html"><span class="mvd">MVD</span> <span class="running">RUNNING</span></a>
             </div>
             <ul>
                 <li><a href="index.html" class="active">Inicio</a></li>
@@ -22,41 +23,34 @@
                 <li><a href="pages/contacto.html">Contacto</a></li>
             </ul>
         </nav>
-
-        <div class="hero">
+         <!-- Sección de Bienvenida de la página o 'Hero Section' -->
+        <section class="hero">
             <img src="img/portadaoficial.png" alt="Montevideo Running" class="hero-img">
-            <div class="hero-overlay"></div>
-            <div class="hero-content">
-                <span class="event-date">EDICIÓN 2026</span>
-                <h1>MONTEVIDEO<br>RUNNING</h1>
+            <div class="contenido-hero">
+                <span class="anio-edicion">EDICIÓN 2026</span>
+                <h1>MONTEVIDEO<br>RUNNING <span class="decoracion">&gt;&gt;&gt;</span></h1>
                 <p>Bienvenido a la plataforma donde los futuros corredores se preparan para su mejor versión. Inscríbete hoy para gestionar tus carreras, seguir tus progresos y unirte a los mejores circuitos de running de la ciudad.</p>
                 <a href="pages/inscripciones.html" class="btn-main">INSCRIBITE AHORA</a>
             </div>
-        </div>
+        </section>
     </header>
-
-    <main class="content-wrapper">
-       <section class="video-section">
-    <div class="video-wrapper">
-        <video id="myVideo" src="assets/video.mp4" autoplay muted loop></video>
-        
-        <div class="video-custom-controls">
-            <button id="playPauseBtn" class="control-btn">
-                <span class="material-symbols-outlined">pause</span>
-            </button>
-            
-            <div class="video-progress-container">
-                <div id="videoProgress" class="video-progress-bar"></div>
+    <!-- Fin de la sección de Bienvenida -->
+    <!-- Sección de Contenido Principal -->
+    <main class="envoltorio-contenido-principal">
+       <section class="video-mvd">
+            <div class="contenedor-video">
+                <video id="video-rambla" src="assets/rambla-montevideo.mp4" autoplay muted loop></video>
+                <div class="controles-video">
+                    <button type="button" id="btn-pausa">
+                    <span>⏸️</span>
+                    </button>
+                    <div class="contenedor-barra-progreso">
+                        <div id="barra-progreso"></div>
+                    </div>
+                </div>
             </div>
-
-            <button id="muteBtn" class="control-btn">
-                <span class="material-symbols-outlined">volume_off</span>
-            </button>
-        </div>
-    </div>
-</section>
-
-        <div class="info-grid">
+        </section>
+        <section class="info-grid">
             <aside class="carreras-list">
                 <h3>PRÓXIMAS CARRERAS 2026</h3>
                 <ul>
@@ -68,38 +62,38 @@
                 </ul>
                 <p class="disclaimer">*Sujeto a cambios según la organización.</p>
             </aside>
-
-            <section class="sponsors-section">
+            <article class="sponsors-section">
                 <h2>NUESTROS SPONSORS</h2>
                 <div class="sponsors-logos">
-                    <img src="img/nikelogo.png" alt="logo de Nike">
+                    <img class="nike-logo" src="img/blue-nike-logos-png-19.png" alt="logo de Nike">
                     <img src="img/Powerade_logo.png" alt="logo de Powerade">
                     <img src="img/intendencialogo.png" alt="logo de la Intendencia de Montevideo">
                     <img src="img/cau.webp" alt="logo de la Confedración Atlética del Uruguay">
                 </div>
-            </section>
-        </div>
+            </article>
+        </section>
     </main>
-
+    <!-- Fin de la sección principal -->
+    <!-- Sección de Footer -->
     <footer class="main-footer">
-        <div class="footer-links">
+        <section class="footer-links">
             <a href="mailto:montevideorunning@imm.gub.uy">
-                <img src="img/icono_gmail.png" alt="Email"> Email
+                <img src="img/google-gmail.svg" alt="Email"> Email
             </a>
             <a href="https://wa.me/59899999999">
-                <img src="img/icono_whatsapp.png" alt="WhatsApp"> WhatsApp
+                <img src="img/whatsapp.svg" alt="WhatsApp"> WhatsApp
             </a>
             <a href="https://instagram.com/montevideo_running">
-                <img src="img/icono_instagram.png" alt="Instagram"> Instagram
+                <img src="img/instagram.svg" alt="Instagram"> Instagram
             </a>
-        </div>
-        <div class="footer-copy">
+        </section>
+        <section class="footer-copy">
             <p>Desarrollado por <strong>Sparrows 🐦‍⬛</strong>.</p>
             <p>&copy; 2026 Todos los derechos reservados.</p>
             <p>Proyecto estudiantil sin fines de lucro.</p>
 
-        </div>
+        </section>
     </footer>
-
+    <!-- Fin de la sección de Footer -->
 </body>
 </html>
