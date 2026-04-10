@@ -88,12 +88,15 @@ body {
 /* Inicio de Hero Section */
 .hero {
     position: relative;
-    height: 100vh;
+    height: fit-content;
     display: flex;
-    align-items: center;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    align-content: flex-start;
     justify-content: flex-start;
     padding: 0 5%;
     overflow: hidden;
+    padding-top: 10%;
 }
 
 .hero-img {
@@ -112,7 +115,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    margin-top: auto;
+    margin-top: 0;
 }
 
 .contenido-hero h1 {
@@ -129,12 +132,11 @@ body {
 .contenido-hero h3,
 .contenido-hero h4 {
     font-family: var(--font-header);
-    line-height: 1.1;
     font-weight: bold;
     text-transform: uppercase;
     font-style: italic;
     line-height: 1.5;
-    font-size: clamp(0.3rem, 5vw, 1.5rem);
+    font-size: clamp(0.8rem, 3.33vw, 2.4rem);
 }
 
 .contenido-hero > h1 > span.decoracion {
@@ -159,7 +161,7 @@ body {
     text-align: center;
     background: var(--naranja);
     color: black;
-    padding: 15px 30px;
+    padding: 30px 60px;
     text-decoration: none;
     font-family: var(--font-header);
     font-weight: 900;
@@ -390,34 +392,28 @@ body {
 
 /* MOBILE */
 @media (max-width: 768px) {
-    /* El contenedor navbar ahora es la barra de navegación inferior */
+    /* El contenedor padre ya no es fijo, vuelve arriba para hacer scroll normal */
     .navbar {
-        top: auto; 
-        bottom: 0;
+        position: absolute;
+        top: 0;
         padding: 0;
-        background: rgba(19, 19, 19, 0.98);
-        backdrop-filter: blur(15px);
-        border-top: 1px solid rgba(242, 145, 0, 0.5);
-        height: 70px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        box-shadow: 0 -5px 20px rgba(0,0,0,0.5);
+        background: transparent;
+        backdrop-filter: none;
+        height: auto;
+        display: block; /* Quitamos flex para separar flujo del logo y los links */
         z-index: 1000;
     }
 
-    /* El logo se extrae del flujo y se fija arriba como el título/H1 principal */
+    /* El logo fluye naturalmente arriba. Desaparecerá al hacer scroll */
     .logo {
-        position: fixed;
-        top: 0 !important;
-        left: 0;
+        position: relative;
         width: 100%;
         height: 65px;
         display: flex;
-        align-items: center;
+        align-items: flex-start;
         justify-content: center;
         background: var(--negro);
-        z-index: 1001; /* Por encima de la navbar inferior */
+        z-index: 1001; 
         border-bottom: 1px solid rgba(255, 255, 255, 0.05);
         margin: 0;
         padding: 0;
@@ -429,12 +425,23 @@ body {
         width: auto;
     }
 
-    /* Los links se distribuyen uniformemente en la parte inferior */
+    /* La lista de links es la que realmente se fija al fondo de la pantalla */
     .navbar ul {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        height: 70px;
+        background: rgba(19, 19, 19, 0.98);
+        backdrop-filter: blur(15px);
+        border-top: 1px solid rgba(242, 145, 0, 0.5);
+        box-shadow: 0 -5px 20px rgba(0,0,0,0.5);
         display: flex;
         width: 100%;
         justify-content: space-evenly;
+        align-items: center;
         gap: 0;
+        margin: 0;
+        padding: 0;
     }
 
     .navbar a {
